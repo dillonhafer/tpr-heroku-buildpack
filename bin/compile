@@ -3,6 +3,7 @@
 # Build backend
 cd $1
 
+gem install bundler --no-ri --no-rdoc
 bundle install
 rake build
 
