@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# Build backend
+rake build
+
+# create tpr.conf
+cat << EOF > tpr.conf
+[server]
+address = 127.0.0.1
+port = $PORT
+
+[database]
+host = $DATABASE_URL
+
+[mail]
+root_url = $SMTP_ROO_URL
+smtp_server = $SMTP_SERVER
+port = $SMPT_PORT
+username = $SMTP_USERNAME
+password = $SMTP_PASSWORD
+from_address = $SMTP_FROM_ADDRESS
+
+[log]
+level = info
+pgx_level = warn
+EOF
+
+# create tern.conf
+cat << EOF > tern.conf
+[database]
+host = $DATABASE_URL
+
+[data]
+app_user = tpr
+EOF

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cat << EOF > Procfile
+---
+addons:
+  - heroku-postgresql
+default_process_types:
+  web: DATABASE_URL=$DATABASE_URL bin/tpr server -p $PORT
+EOF
