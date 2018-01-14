@@ -4,6 +4,7 @@
 cd $1
 
 bundle install
+npm install webpack
 rake build
 
 # create tpr.conf
