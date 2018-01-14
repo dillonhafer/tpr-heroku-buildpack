@@ -1,6 +1,8 @@
 #!/bin/sh
 
 # Build backend
+cd $1
+
 rake build
 
 # create tpr.conf

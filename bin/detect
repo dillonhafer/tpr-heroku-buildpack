@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -f $1/tpr.example.conf ]; then
-  echo "TPR detected"
+  echo "The Pithy Reader"
   exit 0
 else
   exit 1
